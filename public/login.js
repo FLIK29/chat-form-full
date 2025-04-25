@@ -16,7 +16,13 @@ window.login = () => {
 window.register = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => alert('Registration successful! Please login.'))
-    .catch(err => alert(err.message));
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    user.sendEmailVerification().then(() => {
+      alert('Registration successful! A verification email was sent. Please verify your email before logging in.');
+    });
+  })
+  .catch(err => alert(err.message));
+
 };
