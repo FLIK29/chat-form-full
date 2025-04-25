@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Form App</title>
+  <style>
+    #chat-container {
+      display: none;
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    .message {
+      margin-bottom: 10px;
+    }
+    .user { color: blue; }
+    .bot { color: green; }
+  </style>
+</head>
+<body>
+
+  <form id="tattoo-form">
+    <input type="text" name="name" placeholder="What's your name?" required><br>
+    <input type="text" name="idea" placeholder="What's your tattoo idea?" required><br>
+    <input type="text" name="placement" placeholder="Where on your body?" required><br>
+    <input type="text" name="size" placeholder="Approximate size?" required><br>
+    <input type="text" name="appointment" placeholder="Preferred date and time?" required><br>
+    <button type="submit">Send</button>
+  </form>
+
+  <div id="chat-container">
+    <div id="chat-log"></div>
+    <input type="text" id="chat-input" placeholder="Type your reply...">
+    <button id="chat-send">Send</button>
+  </div>
+
+  <script type="module" src="home.js"></script>
+</body>
+</html>
